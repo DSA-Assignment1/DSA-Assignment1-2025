@@ -2,4 +2,12 @@
 REST API and gRPC assignment 
 
 Group members:
-Hermaine Kharugas 224001833
+ 
+| Names            | Student Number|
+| ----------------:|--------------:|
+| Hermaine Kharugas| 224001833     |
+| Rafael Timotheus | 222059710     |
+|                  |               |
+|                  |               |
+|                  |               |
+|                  |               |
