@@ -8,6 +8,6 @@ Group members:
 | Hermaine Kharugas| 224001833     |
 | Rafael Timotheus | 222059710     |
 | Nestor Shikulo   | 222059702     |
-|                  |               |
+| El-Salvador Pashita| 223057606   |
 |                  |               |
 |                  |               |
