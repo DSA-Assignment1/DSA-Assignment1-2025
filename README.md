@@ -9,5 +9,5 @@ Group members:
 | Rafael Timotheus | 222059710     |
 | Nestor Shikulo   | 222059702     |
 | El-Salvador Pashita| 223057606   |
-|                  |               |
+| Uushona Selma    | 222081368     |
 |                  |               |
