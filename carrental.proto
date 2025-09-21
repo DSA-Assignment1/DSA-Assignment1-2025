@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package carrental;
+
+service Rental {
+  // Admin
+  rpc AddCar(Car) returns (CarReply);
+  rpc UpdateCar(Car) returns (CarReply);
+  rpc RemoveCar(CarId) returns (CarList);
+  rpc ListReservations(Empty) returns (ReservationList);
+
+  // Customer
+  rpc ListAvailableCars(Filter) returns (stream Car);
+  rpc SearchCar(CarId) returns (CarReply);
+  rpc AddToCart(AddToCartReq) returns (CartReply);
+  rpc PlaceReservation(UserId) returns (ReservationReply);
+
+  // Users
+  rpc CreateUsers(stream User) returns (UserReply);
+}
+
+// ==== Messages ====
+message Car {
+  string plate = 1;
+  string make = 2;
+  string model = 3;
+  int32 year = 4;
+  double price = 5;
+  double mileage = 6;
+  string status = 7; // AVAILABLE / UNAVAILABLE
+}
+
+message CarId {
+  string plate = 1;
+}
+
+message CarReply {
+  string message = 1;
+  Car car = 2;
+}
+
+message CarList {
+  repeated Car cars = 1;
+}
+
+message Filter {
+  string query = 1; // brand/year/etc
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string role = 3; // ADMIN or CUSTOMER
+}
+
+message UserReply {
+  string message = 1;
+}
+
+message AddToCartReq {
+  string userId = 1;
+  string plate = 2;
+  string start = 3; // ISO date
+  string end = 4;   // ISO date
+}
+
+message CartReply {
+  string message = 1;
+}
+
+message Reservation {
+  string userId = 1;
+  Car car = 2;
+  string start = 3;
+  string end = 4;
+  double price = 5;
+}
+
+message ReservationList {
+  repeated Reservation reservations = 1;
+}
+
+message ReservationReply {
+  string message = 1;
+  repeated Reservation reservations = 2;
+}
+
+message UserId {
+  string id = 1;
+}
+
+message Empty {}
